@@ -1,7 +1,7 @@
 {
     "name": "agentzilla/realty",
     "keywords": ["realty_information", "realty_estates_and_adverts"],
-    "homepage": "https://svn.agentzilla.ru/realty",
+    "homepage": "https://github.com/AndreyMashukov/agentzilla-realty",
     "description": "Realty tools for agentzilla",
     "license": "MIT",
     "authors": [
