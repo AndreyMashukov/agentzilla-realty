@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<agencies>
+    <agency>
+	<city>Иркутск</city>
+	<hash>c7a896fe28cbef023a6d01eff36eaf96a494d8fb</hash>
+	<name>ДЕНИС</name>
+	<phone>89526191914</phone>
+    </agency>
+    <agency>
+	<city>Иркутск</city>
+	<hash>045caf53a1ba6847595e7ed03202138d96c9838f</hash>
+	<name>ВЛАДИМИР</name>
+	<phone>89025153741</phone>
+    </agency>
+    <agency>
+	<city>Иркутск</city>
+	<hash>95752ed9f0e7812bbe4acadbcfebbbd94c2d34cc</hash>
+	<name>АННА</name>
+	<phone>89645477744</phone>
+    </agency>
+    <agency>
+	<city>Иркутск</city>
+	<hash>b278e938999734ad9bc458117fc300ff28ef3bb9</hash>
+	<name>ДМИТРИЙ</name>
+	<phone>89027638001</phone>
+    </agency>
+    <agency>
+	<city>Иркутск</city>
+	<hash>7f52a8ec1b0850677ac6056c740837b0b76bc69a</hash>
+	<name>НЕ УКАЗАНО</name>
+	<phone>89027633820</phone>
+    </agency>
+    <agency>
+	<city>Иркутск</city>
+	<hash>5eb3c16e75b8700b13488e29b4d329fe1ddcbe29</hash>
+	<name>ИЛЬЯ</name>
+	<phone>89025669945</phone>
+    </agency>
+</agencies>

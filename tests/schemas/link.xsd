@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LinkType">
+    <xs:sequence>
+      <xs:element name="country"   type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="region"    type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="city"      type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="site"      type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="type"      type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="operation" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="link"      type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="headers"   type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="gzdecode"  type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="proxy"     type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="link" type="LinkType"/>
+</xs:schema>

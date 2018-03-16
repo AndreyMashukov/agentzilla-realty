@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<advert>
+  <country>Россия</country>
+  <region>Иркутская область</region>
+  <city>Иркутск</city>
+  <address>Первомайский мкр, 31</address>
+  <lat>52.2245766657</lat>
+  <lang>104.310843627</lang>
+  <type>flat</type>
+  <operation>rent</operation>
+  <rooms>2</rooms>
+  <description>Квартира со свежим капитальным ремонтом. Полностью укомплектована.</description>
+  <area>50</area>
+  <floor>5</floor>
+  <floors>5</floors>
+  <material>кирпичного</material>
+  <price>20000</price>
+  <name>Владимир</name>
+  <person>Агентство наAvito c июня 2013</person>
+  <phone>89025153741</phone>
+  <date>05.06.2017</date>
+  <link>https://m.avito.ru/irkutsk/kvartiry/2-k_kvartira_50_m_55_et._1095771425</link>
+  <photo>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</photo>
+</advert>

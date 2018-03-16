@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<whitelist>
+    <patterns>
+	<pattern>/без\s+агент/ui</pattern>
+	<pattern>/без\s+посред/ui</pattern>
+	<pattern>/^собственник\s+/ui</pattern>
+	<pattern>/я\s+собственник/ui</pattern>
+	<pattern>/не\s+агенство/ui</pattern>
+	<pattern>/не\s+агентство/ui</pattern>
+	<pattern>/без\s+посредников/ui</pattern>
+	<pattern>/без\s+комиссии/ui</pattern>
+	<pattern>/не\s+риелтор/ui</pattern>
+	<pattern>/я\s+хозяин/ui</pattern>
+	<pattern>/от\s+собственника/ui</pattern>
+    </patterns>
+</whitelist>

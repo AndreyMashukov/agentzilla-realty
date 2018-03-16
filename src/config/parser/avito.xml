@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+    <Fields>
+	<XPath name="address">//span[@class='info-text user-address-text']//text()</XPath>
+	<XPath name="lat">//div[@class='item-map']/@data-coords-lat</XPath>
+	<XPath name="lang">//div[@class='item-map']/@data-coords-lng</XPath>
+	<XPath name="description">//div[@class='description-preview-wrapper']/p</XPath>
+	<XPath name="price">//span[@class='price-value']//text()</XPath>
+	<XPath name="comission" explode="&lt;br&gt;" index="0">//div[@class='info-price-extra']//text()</XPath>
+	<XPath name="name">//a[@class='person-name person-name-link']</XPath>
+	<XPath name="person">//div[@class='person-registered-since']//text()</XPath>
+	<XPath name="date">//div[@class='item-add-date']</XPath>
+	<XPath name="info">//div[@class='info-params params']</XPath>
+	<XPath name="title">//header[@class='single-item-header b-with-padding']</XPath>
+    </Fields>
+    <Parser>
+	<Pattern>/.*(?P&lt;rooms&gt;\d{1})\s?-к.*/ui</Pattern>
+	<Pattern>/.*на\s+(?P&lt;floor&gt;\d{1,2})\s+этаже(?P&lt;floors&gt;\d{1,2})-этажного.*/ui</Pattern>
+	<Pattern>/.*(?P&lt;floor&gt;\d{1})\s?\/\s?(?P&lt;floors&gt;\d{1})\s+эт\..*/ui</Pattern>
+	<Pattern>/(?P&lt;rooms&gt;\d{1})-к\s+/ui</Pattern>
+	<Pattern>/(?P&lt;area&gt;[0-9\.]{1,5})\s+м²/ui</Pattern>
+	<Pattern>/\s+(?P&lt;floor&gt;\d{1,2})\s+этаже\s{2}/ui</Pattern>
+	<Pattern>/(?P&lt;floors&gt;\d{1,2})-этажного/ui</Pattern>
+	<Pattern>/этажного(?P&lt;material&gt;\w+)/ui</Pattern>
+	<Pattern>/ЖК\s+[«]{1}(?P&lt;residentialcomplex&gt;.*)[»]{1}/ui</Pattern>
+	<Pattern>/на\s+участке(?P&lt;land&gt;[0-9\.]{1,6})\s+сот/ui</Pattern>
+	<Pattern>/(?P&lt;distance&gt;\d{1,4})\s+км\s+до\s+города/ui</Pattern>
+	<Pattern>/(?P&lt;area&gt;[0-9\.]{1,8})\s+сот\.\,(?P&lt;appointment&gt;[А-Яа-я \)\(,\.]{1,35})\,(?P&lt;distance&gt;\d{1,4})\s+км\s+до\s+города/ui</Pattern>
+	<Pattern>/(?P&lt;floors&gt;\d{1,2})-этажный[а-я]{2,15}(?P&lt;area&gt;[0-9\.]{1,8})\s+м²[(]{1}(?P&lt;material&gt;[а-я- ]+)[)]{1}/ui</Pattern>
+	<Pattern>/(?P&lt;area&gt;[0-9\.]{1,8})\s+сот\.,(?P&lt;appointment&gt;[А-Яа-я \)\(,\.]{1,35}),/ui</Pattern>
+	<Pattern>/(ЖК|Мкр.)\s+[«]{1}(?P&lt;residentialcomplex&gt;.*)[»]{1}[А-Яа-я0-9- \.,]+((?P&lt;rooms&gt;\d{1})-к\s+[а-я]{1,15}|Студия)(?P&lt;area>[0-9\.]{1,5})\s+м²на\s+(?P&lt;floor>\d{1,2})\s+этаже\s{0,2}(?P&lt;floors>\d{1,2})-этажного(?P&lt;material>\w+)/u</Pattern>
+	<Pattern>/(?P&lt;floors&gt;\d{1,2})-этажный[а-я]{1,15}(?P&lt;area&gt;[0-9\.]{1,6})\s+м²[(]{1}(?P&lt;material&gt;[а-я- ]+)[)]{1}/ui</Pattern>
+	<Pattern>/на\s+участке(?P&lt;land&gt;[0-9\.]{1,6})\s+сот\.\,/ui</Pattern>
+	<Pattern>/(?P&lt;area&gt;[0-9\.]{1,6})\s+м²[(]{1}(?P&lt;material&gt;.*)[)]{1}на\s+участке(?P&lt;land&gt;[0-9\.]{1,6})\s+сот\./ui</Pattern>
+    </Parser>
+    <Photos type="xpath">//meta[@property='og:image']/@content</Photos>
+    <Phone type="method">_getPhoneAvito</Phone>
+</Config>

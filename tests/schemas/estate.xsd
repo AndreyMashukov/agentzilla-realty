@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:simpleType name="PhoneType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{6,11}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+   <xs:simpleType name="CoordinatesType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,3}\.[0-9]{1,11}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="MaterialType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="панель"/>
+      <xs:enumeration value="блоки"/>
+      <xs:enumeration value="кирпич"/>
+      <xs:enumeration value="пеноблок"/>
+      <xs:enumeration value="экспериментальные материалы"/>
+      <xs:enumeration value="бревно"/>
+      <xs:enumeration value="монолит"/>
+      <xs:enumeration value="брус"/>
+      <xs:enumeration value="дерево"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="OperationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="rent"/>
+      <xs:enumeration value="buy"/>
+      <xs:enumeration value="sell"/>
+      <xs:enumeration value="hire"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DateTimeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{4}\s[0-9]{2}:[0-9]{2}:[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PriceType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]+|не указана)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="PriceElementType">
+    <xs:simpleContent>
+      <xs:extension base="PriceType">
+        <xs:attribute name="datetime" type="DateTimeType" use="required"/>
+        <xs:attribute name="phone"    type="PhoneType"    use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="LinkType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="https?://.*"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="LinkElementType">
+    <xs:simpleContent>
+      <xs:extension base="LinkType">
+        <xs:attribute name="datetime" type="DateTimeType" use="required"/>
+        <xs:attribute name="phone"    type="PhoneType"    use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="TypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="flat"/>
+      <xs:enumeration value="flat-daily"/>
+      <xs:enumeration value="flat-in-new-building"/>
+      <xs:enumeration value="cottage"/>
+      <xs:enumeration value="house"/>
+      <xs:enumeration value="town-house"/>
+      <xs:enumeration value="country-house"/>
+      <xs:enumeration value="room"/>
+      <xs:enumeration value="commercial"/>
+      <xs:enumeration value="garage"/>
+      <xs:enumeration value="land"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PersonType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="agency"/>
+      <xs:enumeration value="owner"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="DescriptionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="datetime" type="DateTimeType" use="required"/>
+        <xs:attribute name="phone"    type="PhoneType"    use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="SellerType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="person" type="PersonType" use="required"/>
+        <xs:attribute name="phone"  type="PhoneType"  use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="EstateType">
+    <xs:sequence>
+      <xs:element name="id"                 type="xs:string"        minOccurs="1" maxOccurs="1"/>
+      <xs:element name="country"            type="xs:string"        minOccurs="1" maxOccurs="1"/>
+      <xs:element name="region"             type="xs:string"        minOccurs="1" maxOccurs="1"/>
+      <xs:element name="city"               type="xs:string"        minOccurs="1" maxOccurs="1"/>
+      <xs:element name="address"            type="xs:string"        minOccurs="1" maxOccurs="1"/>
+      <xs:element name="district"           type="xs:string"        minOccurs="0" maxOccurs="1"/>
+      <xs:element name="lat"                type="CoordinatesType"  minOccurs="0" maxOccurs="1"/>
+      <xs:element name="lang"               type="CoordinatesType"  minOccurs="0" maxOccurs="1"/>
+      <xs:element name="type"               type="TypeType"         minOccurs="1" maxOccurs="1"/>
+      <xs:element name="operation"          type="OperationType"    minOccurs="1" maxOccurs="1"/>
+      <xs:element name="rooms"              type="xs:integer"       minOccurs="0" maxOccurs="1"/>
+      <xs:element name="description"        type="DescriptionType"  minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="area"               type="xs:float"         minOccurs="0" maxOccurs="1"/>
+      <xs:element name="floor"              type="xs:integer"       minOccurs="0" maxOccurs="1"/>
+      <xs:element name="floors"             type="xs:integer"       minOccurs="0" maxOccurs="1"/>
+      <xs:element name="material"           type="xs:string"        minOccurs="0" maxOccurs="1"/>
+      <xs:element name="distance"           type="xs:integer"       minOccurs="0" maxOccurs="1"/>
+      <xs:element name="appointment"        type="xs:string"        minOccurs="0" maxOccurs="1"/>
+      <xs:element name="land"               type="xs:float"         minOccurs="0" maxOccurs="1"/>
+      <xs:element name="price"              type="PriceElementType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="comission"          type="PriceElementType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="seller"             type="SellerType"       minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="link"               type="LinkElementType"  minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="photo"              type="xs:base64Binary"  minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="estate" type="EstateType"/>
+</xs:schema>

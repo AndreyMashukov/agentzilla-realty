@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<advert>
+  <country>Россия</country>
+  <region>Иркутская область</region>
+  <city>Иркутск</city>
+  <address>Ржанова, 25</address>
+  <district>Солнечный</district>
+  <lat>104.360772</lat>
+  <lang>52.250526</lang>
+  <type>flat</type>
+  <operation>rent</operation>
+  <rooms>1</rooms>
+  <description>Сдам 1комнатную квартиру в Солнечном. Полностью укомплектована мебелью. Оснащена бытовой техникой. На длительный срок.</description>
+  <area>37</area>
+  <floor>3</floor>
+  <floors>5</floors>
+  <material>панельного</material>
+  <price>17500</price>
+  <name>Петр</name>
+  <person>owner</person>
+  <phone>89998887755</phone>
+  <date>13.06.2017</date>
+  <link>https://m.avito.ru/irkutsk/kvartiry/1-k_kvartira_37_m_35_et._1233243523</link>
+</advert>

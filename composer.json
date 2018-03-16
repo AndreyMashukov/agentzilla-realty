@@ -1,0 +1,58 @@
+{
+    "name": "agentzilla/realty",
+    "keywords": ["realty_information", "realty_estates_and_adverts"],
+    "homepage": "https://svn.agentzilla.ru/realty",
+    "description": "Realty tools for agentzilla",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrey Mashukov",
+            "email": "a.mashukov@yandex.ru",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://satis.agentzilla.ru"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "Agentzilla\\Realty\\": ["src"]
+        }
+    },
+    "require": {
+        "php": ">=7.0",
+        "andrey-mashukov/container": "^5.0",
+        "andrey-mashukov/xmlgenerator": "1.2.1",
+        "logics/sql": "^0.1",
+        "agentzilla/phones": "^0.1",
+        "andrey-mashukov/bigfile": "1.0",
+        "andrey-mashukov/stamp": "1.0.2",
+        "agentzilla/gis": "^0.1",
+        "ext-SimpleXML": "*",
+        "ext-mbstring": "*",
+        "ext-hash": "*",
+        "ext-dom": "*",
+        "ext-json": "*"
+    },
+    "autoload-dev" : {
+        "psr-4" : {
+            "Tests\\": ["tests"]
+        }
+    },
+    "require-dev": {
+        "pdepend/pdepend": "^2.2",
+        "phpmd/phpmd": "^2.4",
+        "phploc/phploc": "^2.1",
+        "sebastian/phpcpd": "^2.0",
+        "phpdocumentor/phpdocumentor": "^2.9",
+        "mamuz/php-dependency-analysis": "^0.6",
+        "phpunit/phpunit": "^4.8",
+        "logics/phpunit-extensions": "^0.2||dev-trunk",
+        "logics/codesniffer": "^0.1||dev-trunk",
+        "logics/extcheck": "^0.1||dev-trunk"
+    },
+    "prefer-stable": true
+}

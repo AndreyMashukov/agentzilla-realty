@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+    <Fields>
+	<XPath name="address">//div[@class='productPage__infoTextBold js-scrollToMap']</XPath>
+	<XPath name="lat">//span[@class='listItem-address js-address']/@data-lat</XPath>
+	<XPath name="lang">//span[@class='listItem-address js-address']/@data-lng</XPath>
+	<XPath name="description">//p[@class='productPage__descriptionText js-productPageDescription']</XPath>
+	<XPath name="price">//div[@class='productPage__price js-contentPrice']</XPath>
+	<XPath name="name">//div[@class='productPage__infoTextBold productPage__infoTextBold_inline']</XPath>
+	<XPath name="persone">//a[@class='listItem-sellerSite js-sellerSite']/@href</XPath>
+	<XPath name="date">//div[@class='productPage__createDate']/span</XPath>
+	<XPath name="info">//div[@class='productPage__characteristicsItem']/span</XPath>
+	<XPath name="title">//div[@class='productPage__wrapperTitle js-wrapperTitle']/h1[contains(@class, 'productPage__title js-productPageTitle')]</XPath>
+    </Fields>
+    <Parser>
+	<Pattern>/(?P&lt;rooms&gt;\d{1})-комн/ui</Pattern>
+	<Pattern>/(?P&lt;area&gt;[0-9\.]{1,6})\s+кв.м/ui</Pattern>
+	<Pattern>/этаж\s+(?P&lt;floor&gt;\d{1,2})\/(?P&lt;floors&gt;\d{1,2})/ui</Pattern>
+    </Parser>
+    <Photos>_getPhotosIrr</Photos>
+    <Phone>_getPhoneIrr</Phone>
+</Config>

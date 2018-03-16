@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+    <Fields>
+	<XPath name="address">//ul[@class='options m-top']/li/p</XPath>
+	<XPath name="description">//div[@class='b-content-left-col']/p</XPath>
+	<XPath name="price">//p[@class='price']/strong</XPath>
+	<XPath name="name">//div[@class='b-phone-info']/p/node()[3]</XPath>
+	<XPath name="date">//div[@class='date']/div/p</XPath>
+	<XPath name="info">//ul[@class='options']</XPath>
+	<XPath name="title">//h1[@class='card-living-content-header__title']//text()</XPath>
+    </Fields>
+    <Parser>
+	<Pattern>/(?P&lt;rooms&gt;\d{1})-комн/ui</Pattern>
+	<Pattern>/(?P&lt;area&gt;[0-9\.]{1,6})\s+м²/ui</Pattern>
+	<Pattern>/(?P&lt;floor&gt;\d{1,2})\s+из\s+(?P&lt;floors&gt;\d{1,2})/ui</Pattern>
+    </Parser>
+    <Photos>_getPhotosMkv</Photos>
+    <Phone>_getPhoneMkv</Phone>
+</Config>
